@@ -2,6 +2,8 @@
 
 import colorsys
 import time
+import santa
+
 from sys import exit
 
 try:
@@ -94,6 +96,7 @@ def printMessage():
 
 try:
     while True:
+        santa.draw()
         printMessage()
 except KeyboardInterrupt:
     unicornhathd.off()
