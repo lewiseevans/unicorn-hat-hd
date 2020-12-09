@@ -23,12 +23,11 @@ are available. See: http://pillow.readthedocs.io/en/3.1.x/reference/
 """)
 
 
-lines = ["In the old #BILGETANK we'll keep you in the know",
-         "In the old #BILGETANK we'll fix your techie woes",
-         "And we'll make things",
-         "And we'll break things",
-         "'til we're altogether aching",
-         "Then we'll grab a cup of grog down in the old #BILGETANK"]
+lines = ["FATHER CHRISTMAS SAYS HI!",
+         "JINGLE WOZ ERE :) ",
+         ":D .... xD",
+         "I BROKE IT!",
+         "DON'T TelL DaaaaD"]
 
 colours = [tuple([int(n * 255) for n in colorsys.hsv_to_rgb(x /
                                                             float(len(lines)), 1.0, 1.0)]) for x in range(len(lines))]
@@ -59,10 +58,11 @@ font_file, font_size = FONT
 
 font = ImageFont.truetype(font_file, font_size)
 
-text_width, text_height = width, 0
-
 
 def printMessage():
+
+    text_width, text_height = width, 0
+
     for line in lines:
         w, h = font.getsize(line)
         text_width += w + width
