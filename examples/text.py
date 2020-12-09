@@ -27,9 +27,9 @@ are available. See: http://pillow.readthedocs.io/en/3.1.x/reference/
 
 lines = ["FATHER CHRISTMAS SAYS HI!",
          "JINGLE WOZ ERE :) ",
-         ":D .... xD",
+         ":D xD :O :(",
          "I BROKE IT!",
-         "DON'T TelL DaaaaD"]
+         "DOooNnN'T TellllL DaaaaD"]
 
 colours = [tuple([int(n * 255) for n in colorsys.hsv_to_rgb(x /
                                                             float(len(lines)), 1.0, 1.0)]) for x in range(len(lines))]
@@ -46,7 +46,6 @@ FONT = ('/usr/share/fonts/truetype/freefont/FreeSansBold.ttf', 12)
 # sudo apt install fonts-roboto
 # FONT = ('/usr/share/fonts/truetype/roboto/Roboto-Bold.ttf', 10)
 
-unicornhathd.rotation(90)
 unicornhathd.brightness(0.6)
 
 
@@ -62,7 +61,7 @@ font = ImageFont.truetype(font_file, font_size)
 
 
 def printMessage():
-
+    unicornhathd.rotation(90)
     text_width, text_height = width, 0
 
     for line in lines:
@@ -91,7 +90,7 @@ def printMessage():
                 unicornhathd.set_pixel(width - 1 - x, y, r, g, b)
 
         unicornhathd.show()
-        time.sleep(0.01)
+        time.sleep(0.02)
 
 
 try:
