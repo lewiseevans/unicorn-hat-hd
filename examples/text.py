@@ -30,7 +30,8 @@ lines = ["In the old #BILGETANK we'll keep you in the know",
          "'til we're altogether aching",
          "Then we'll grab a cup of grog down in the old #BILGETANK"]
 
-colours = [tuple([int(n * 255) for n in colorsys.hsv_to_rgb(x / float(len(lines)), 1.0, 1.0)]) for x in range(len(lines))]
+colours = [tuple([int(n * 255) for n in colorsys.hsv_to_rgb(x /
+                                                            float(len(lines)), 1.0, 1.0)]) for x in range(len(lines))]
 
 
 # Use `fc-list` to show a list of installed fonts on your system,
@@ -44,7 +45,7 @@ FONT = ('/usr/share/fonts/truetype/freefont/FreeSansBold.ttf', 12)
 # sudo apt install fonts-roboto
 # FONT = ('/usr/share/fonts/truetype/roboto/Roboto-Bold.ttf', 10)
 
-unicornhathd.rotation(270)
+unicornhathd.rotation(90)
 unicornhathd.brightness(0.6)
 
 
@@ -60,7 +61,8 @@ font = ImageFont.truetype(font_file, font_size)
 
 text_width, text_height = width, 0
 
-try:
+
+def printMessage():
     for line in lines:
         w, h = font.getsize(line)
         text_width += w + width
@@ -74,7 +76,8 @@ try:
     offset_left = 0
 
     for index, line in enumerate(lines):
-        draw.text((text_x + offset_left, text_y), line, colours[index], font=font)
+        draw.text((text_x + offset_left, text_y),
+                  line, colours[index], font=font)
 
         offset_left += font.getsize(line)[0] + width
 
@@ -88,6 +91,10 @@ try:
         unicornhathd.show()
         time.sleep(0.01)
 
+
+try:
+    while True:
+        printMessage()
 except KeyboardInterrupt:
     unicornhathd.off()
 
